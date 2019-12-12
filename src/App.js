@@ -20,9 +20,12 @@ function App() {
   // Don't forget to pass the functions (and any additional data needed) to the components as props
 
   const [display, setDisplay] = useState('');
+  console.log(display);
+
   const addNumber = (number) => {
     setDisplay(display + number);
   }
+
   const displayOperator = (operator) => {
     if(operator === '=') {
       setDisplay(display => eval(display))
@@ -36,9 +39,9 @@ function App() {
       <div className="App">
         <Logo />
         <Display number = {display}/>
+        <Specials />
         <Numbers addNumber = {addNumber}/>
         <Operators displayOperator = {displayOperator}/>
-        <Specials />
         {/* STEP 4 - Render your components here and be sure to properly import/export all files */}
       </div>
     </div>
